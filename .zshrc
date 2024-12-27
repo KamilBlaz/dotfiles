@@ -99,6 +99,7 @@ alias gd='git diff'
 alias gdc='git diff --cached'
 # [c]heck [o]ut
 alias co='git checkout'
+
 # [f]uzzy check[o]ut
 fo() {
   git branch --no-color --sort=-committerdate --format='%(refname:short)' | fzf --header 'git checkout' | xargs git checkout
@@ -107,6 +108,7 @@ fo() {
 po() {
   gh pr list --author "@me" | fzf --header 'checkout PR' | awk '{print $(NF-5)}' | xargs git checkout
 }
+
 alias up='git push'
 alias upf='git push --force'
 alias pu='git pull'
@@ -161,10 +163,10 @@ spinner() {
 }
 
 
-#s3() {
-#  local route="s3.example.com/${1}"
-#  aws s3 cp ${1} s3://${route}
-#  echo http://${route} | pbcopy
+s3() {
+  local route="s3.example.com/${1}"
+  aws s3 cp ${1} s3://${route}
+  echo http://${route} | pbcopy
 }
 
 # Open PR on GitHub
@@ -296,7 +298,6 @@ if [ -e /opt/homebrew/etc/profile.d/z.sh ]; then
 fi
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export AWS_PROFILE=GiB
 
 # Export my personal ~/bin as last one to have highest precedence
 export PATH="$HOME/bin:$PATH"
