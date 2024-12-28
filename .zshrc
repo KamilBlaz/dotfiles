@@ -306,3 +306,11 @@ bindkey '^E' end-of-line
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+# Add Homebrew to PATH
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# For Rosetta 2 (Intel apps)
+eval "$(/usr/local/bin/brew shellenv)"
+eval "$(zoxide init zsh)"
+
