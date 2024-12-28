@@ -40,6 +40,7 @@
           pkgs.nmap
           pkgs.ncdu
           pkgs.zoxide
+          pkgs.eza
         ];
 
       # Necessary for using flakes on this system.

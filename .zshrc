@@ -79,6 +79,19 @@ esac
 if type lsd &> /dev/null; then
   alias ls=lsd
 fi
+
+# eza aliases (modern ls replacement)
+alias ls="eza --icons"
+alias ll="eza -l --icons"
+alias la="eza -la --icons"
+alias lt="eza --tree --icons"
+alias l.="eza -a --icons | grep -E '^\.'"
+
+# zoxide aliases (smart cd replacement)
+alias cd="z"
+alias cdi="zi"
+
+
 alias lls='ls -lh --sort=size --reverse'
 alias llt='ls -lrt'
 alias bear='clear && echo "Clear as a bear!"'
@@ -314,3 +327,9 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(/usr/local/bin/brew shellenv)"
 eval "$(zoxide init zsh)"
 
+export PATH=$PATH:$HOME/.local/opt/go/bin
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+[[ -s "/Users/kamilblaz/.gvm/scripts/gvm" ]] && source "/Users/kamilblaz/.gvm/scripts/gvm"
