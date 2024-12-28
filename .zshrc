@@ -163,7 +163,7 @@ spinner() {
 }
 
 
-s3() {
+s3() { 
   local route="s3.example.com/${1}"
   aws s3 cp ${1} s3://${route}
   echo http://${route} | pbcopy
