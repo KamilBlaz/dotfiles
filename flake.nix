@@ -41,6 +41,8 @@
           pkgs.ncdu
           pkgs.zoxide
           pkgs.eza
+          pkgs.stow
+        
         ];
 
       # Necessary for using flakes on this system.

@@ -6,29 +6,29 @@ This directory contains the dotfiles for my system
 
 Ensure you have the following installed on your system
 
-### Git
+
+## Clone repo
 
 ```
-brew install git
+git clone https://github.com/KamilBlaz/dotfiles.git ~/dotfiles
+cd ~/dotfiles
 ```
 
-### Stow
+## Install Nix
 
 ```
-brew install stow
+sh <(curl -L https://nixos.org/nix/install)
 ```
 
-## Installation
-
-First, check out the dotfiles repo in your $HOME directory using git
+## Init Nix Flakes
 
 ```
-$ git clone git@github.com/KamilBlaz/dotfiles.git
-$ cd dotfiles
+nix flake init -t nix-darwin --extra-experimental-features "nix-command flakes"
 ```
 
-then use GNU stow to create symlinks
+
+## Stow
 
 ```
-$ stow .
+stow . 
 ```

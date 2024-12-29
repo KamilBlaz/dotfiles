@@ -281,6 +281,9 @@ if type direnv &> /dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
+#git
+export GIT_CONFIG_GLOBAL=~/.config/git/.gitconfig
+
 # node.js
 export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
 
