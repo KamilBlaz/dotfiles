@@ -41,5 +41,8 @@ nix flake init -t nix-darwin --extra-experimental-features "nix-command flakes"
  darwin-rebuild switch --flake ~/dotfiles#blaze
 ```
 
+## Stow
+
+```
 stow . 
 ```
