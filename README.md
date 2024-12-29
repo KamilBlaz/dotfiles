@@ -26,9 +26,11 @@ sh <(curl -L https://nixos.org/nix/install)
 nix flake init -t nix-darwin --extra-experimental-features "nix-command flakes"
 ```
 
-
-## Stow
+## Install Nix Flakes
 
 ```
+nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake ~/dotfiles#blaze
+```
+
 stow . 
 ```
