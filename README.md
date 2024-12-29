@@ -1,5 +1,8 @@
 # My dotfiles
 
+<img src="https://nixos.org/logo/nixos-logo-only-hires.png" alt="Nix" width="200"/>
+
+
 This directory contains the dotfiles for my system
 
 ## Requirements
@@ -14,6 +17,12 @@ git clone https://github.com/KamilBlaz/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
+## Backup zsh
+
+```
+mv ~/.zshrc ~/.zshrc.bak
+```
+
 ## Install Nix
 
 ```
@@ -26,10 +35,10 @@ sh <(curl -L https://nixos.org/nix/install)
 nix flake init -t nix-darwin --extra-experimental-features "nix-command flakes"
 ```
 
-## Install Nix Flakes
+## Rebuild Nix Flakes
 
 ```
-nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake ~/dotfiles#blaze
+ darwin-rebuild switch --flake ~/dotfiles#blaze
 ```
 
 stow . 

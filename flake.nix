@@ -42,7 +42,7 @@
           pkgs.zoxide
           pkgs.eza
           pkgs.stow
-        
+          pkgs.kubecolor
         ];
 
       # Necessary for using flakes on this system.
