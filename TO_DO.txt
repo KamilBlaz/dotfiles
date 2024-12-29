@@ -1,15 +1,18 @@
-## My Applications
 
-- alttab
-- Cursor + Extenstions
-- RayCast 
-- Alcritty
-- Arc Browser
 
-## Fonts
+## Consider Home Manager
 
-- JetBrainsMono Nerd Font
--    ## insall via nix
-      #brew tap homebrew/cask-fonts 
-      #brew install font-jetbrains-mono-nerd-font
+- [ ] Lens
+- [ ] Cursor
+- [ ] RayCast
+- [ ] Alcritty
+- [ ] Arc Browser
+- [ ] Alttab
+
+
+# Fixes
+
+- [ ] JetBrainsMono Nerd Font
+ # brew tap homebrew/cask-fonts 
+ # brew install font-jetbrains-mono-nerd-font
 

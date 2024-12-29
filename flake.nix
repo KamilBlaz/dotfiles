@@ -52,7 +52,6 @@
       nix.settings.experimental-features = "nix-command flakes";
 
       security.pam.enableSudoTouchIdAuth = true;
-
       # Enable alternative shell support in nix-darwin.
       # programs.fish.enable = true;
 
