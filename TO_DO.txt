@@ -1,0 +1,7 @@
+## My Applications
+
+- alttab
+- Cursor + Extenstions
+- RayCast 
+- Alcritty
+- Arc Browser
