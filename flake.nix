@@ -45,11 +45,9 @@
           pkgs.kubecolor
           pkgs.alacritty
           pkgs.mkalias
+          pkgs.code-cursor
         ];
 
-      # fonts.packages = [
-      #   (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-      # ];
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 

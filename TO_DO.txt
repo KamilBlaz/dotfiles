@@ -5,3 +5,11 @@
 - RayCast 
 - Alcritty
 - Arc Browser
+
+## Fonts
+
+- JetBrainsMono Nerd Font
+-    ## insall via nix
+      #brew tap homebrew/cask-fonts 
+      #brew install font-jetbrains-mono-nerd-font
+
