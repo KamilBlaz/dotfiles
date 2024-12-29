@@ -1,7 +1,6 @@
 
 
 ## Consider Home Manager
-
 - [ ] Lens
 - [ ] Cursor
 - [ ] RayCast
