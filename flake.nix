@@ -45,7 +45,6 @@
           pkgs.kubecolor
           pkgs.alacritty
           pkgs.mkalias
-          pkgs.code-cursor
         ];
 
       # Necessary for using flakes on this system.
