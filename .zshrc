@@ -61,57 +61,6 @@ setopt auto_pushd
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-#########
-# Aliases
-#########
-
-case $OSTYPE in
-  linux*)
-    local aliasfile="${HOME}/.zsh.d/aliases.Linux.sh"
-    [[ -e ${aliasfile} ]] && source ${aliasfile}
-  ;;
-  darwin*)
-    local aliasfile="${HOME}/.zsh.d/aliases.Darwin.sh"
-    [[ -e ${aliasfile} ]] && source ${aliasfile}
-  ;;
-esac
-
-if type lsd &> /dev/null; then
-  alias ls=lsd
-fi
-
-# eza aliases (modern ls replacement)
-alias ls="eza --icons"
-alias ll="eza -l --icons"
-alias la="eza -la --icons"
-alias lt="eza --tree --icons"
-alias l.="eza -a --icons | grep -E '^\.'"
-
-# zoxide aliases (smart cd replacement)
-alias cd="z"
-alias cdi="zi"
-
-
-alias lls='ls -lh --sort=size --reverse'
-alias llt='ls -lrt'
-alias bear='clear && echo "Clear as a bear!"'
-
-alias history='history 1'
-alias hs='history | grep '
-
-# Edit/Source vim config
-alias ez='vim ~/.zshrc'
-alias sz='source ~/.zshrc'
-
-# git
-alias gst='git status'
-alias gaa='git add -A'
-alias gc='git commit'
-alias gcm='git checkout main'
-alias gd='git diff'
-alias gdc='git diff --cached'
-# [c]heck [o]ut
-alias co='git checkout'
 
 # [f]uzzy check[o]ut
 fo() {
@@ -121,33 +70,6 @@ fo() {
 po() {
   gh pr list --author "@me" | fzf --header 'checkout PR' | awk '{print $(NF-5)}' | xargs git checkout
 }
-
-alias up='git push'
-alias upf='git push --force'
-alias pu='git pull'
-alias pur='git pull --rebase'
-alias fe='git fetch'
-alias re='git rebase'
-alias lr='git l -30'
-alias cdr='cd $(git rev-parse --show-toplevel)' # cd to git Root
-alias hs='git rev-parse --short HEAD'
-alias hm='git log --format=%B -n 1 HEAD'
-
-# ceedee dot dot dot
-alias -g ...='../..'
-alias -g ....='../../..'
-alias -g .....='../../../..'
-
-# Notes
-alias n='vim +Notes' # Opens Vim and calls `:Notes`
-
-# Go
-alias got='go test ./...'
-alias kubectl="kubecolor"
-alias k='kubectl'
-
-alias -g withcolors="| sed '/PASS/s//$(printf "\033[32mPASS\033[0m")/' | sed '/FAIL/s//$(printf "\033[31mFAIL\033[0m")/'"
-
 
 ##########
 # FUNCTIONS
@@ -234,8 +156,6 @@ simple_prompt() {
 # ENV
 ########
 
-export COLOR_PROFILE="dark"
-
 case $OSTYPE in
   linux*)
     local envfile="${HOME}/.zsh.d/env.Linux.sh"
@@ -247,14 +167,6 @@ case $OSTYPE in
   ;;
 esac
 
-export LSCOLORS="Gxfxcxdxbxegedabagacad"
-
-# Reduce delay for key combinations in order to change to vi mode faster
-# See: http://www.johnhawthorn.com/2012/09/vi-escape-delays/
-# Set it to 10ms
-export KEYTIMEOUT=1
-
-export PATH="$HOME/neovim/bin:$PATH"
 
 if type nvim &> /dev/null; then
   alias vim="nvim"
@@ -272,25 +184,10 @@ if [[ -e "$HOME/code/clones/lua-language-server/3rd/luamake/luamake" ]]; then
 fi
 
 
-# homebrew
-export PATH="/usr/local/bin:$PATH"
-export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
-
 # direnv
 if type direnv &> /dev/null; then
   eval "$(direnv hook zsh)"
 fi
-
-#git
-export GIT_CONFIG_GLOBAL=~/.config/git/.gitconfig
-
-# node.js
-export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
-
-# golang
-export GOPATH="$HOME/code/go"
-export GOBIN="$GOPATH/bin"
-export PATH="$GOBIN:$PATH"
 
 # fzf
 if type fzf &> /dev/null && type rg &> /dev/null; then
@@ -313,15 +210,9 @@ if [ -e /opt/homebrew/etc/profile.d/z.sh ]; then
   source /opt/homebrew/etc/profile.d/z.sh
 fi
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-# Export my personal ~/bin as last one to have highest precedence
-export PATH="$HOME/bin:$PATH"
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
-
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
 
 # Add Homebrew to PATH
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -330,9 +221,13 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(/usr/local/bin/brew shellenv)"
 eval "$(zoxide init zsh)"
 
-export PATH=$PATH:$HOME/.local/opt/go/bin
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
-#[[ -s "/Users/kamilblaz/.gvm/scripts/gvm" ]] && source "/Users/kamilblaz/.gvm/scripts/gvm"
+[[ -s "/Users/kamilblaz/.gvm/scripts/gvm" ]] && source "/Users/kamilblaz/.gvm/scripts/gvm"
+
+
+# Aliases
+# Source the aliases file
+[[ -f ~/.aliases ]] && source ~/.aliases

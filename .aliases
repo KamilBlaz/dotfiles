@@ -1,0 +1,59 @@
+
+
+# eza aliases (modern ls replacement)
+alias ls="eza --icons"
+alias ll="eza -l --icons"
+alias la="eza -la --icons"
+alias lt="eza --tree --icons"
+alias l.="eza -a --icons | grep -E '^\.'"
+
+# ls aliases
+alias lls='ls -lh --sort=size --reverse'
+alias llt='ls -lrt'
+alias bear='clear && echo "Clear as a bear!"'
+
+alias history='history 1'
+alias hs='history | grep '
+
+# Edit/Source vim config
+alias ez='vim ~/.zshrc'
+alias sz='source ~/.zshrc'
+
+# git aliases
+alias gst='git status'
+alias gaa='git add -A'
+alias gc='git commit'
+alias gcm='git checkout main'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias co='git checkout'
+alias up='git push'
+alias upf='git push --force'
+alias pu='git pull'
+alias pur='git pull --rebase'
+alias fe='git fetch'
+alias re='git rebase'
+alias lr='git l -30'
+alias cdr='cd $(git rev-parse --show-toplevel)' # cd to git Root
+alias hs='git rev-parse --short HEAD'
+alias hm='git log --format=%B -n 1 HEAD'
+
+# directory navigation
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+
+# Notes
+alias n='vim +Notes' # Opens Vim and calls `:Notes`
+
+# Go
+alias got='go test ./...'
+alias kubectl="kubecolor"
+alias k='kubectl'
+
+alias -g withcolors="| sed '/PASS/s//$(printf "\033[32mPASS\033[0m")/' | sed '/FAIL/s//$(printf "\033[31mFAIL\033[0m")/'"
+
+# lsd/ls override
+if type lsd &> /dev/null; then
+  alias ls=lsd
+fi

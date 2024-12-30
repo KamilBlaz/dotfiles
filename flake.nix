@@ -45,6 +45,13 @@
           pkgs.kubecolor
           pkgs.alacritty
           pkgs.mkalias
+          ## auto completion 
+          pkgs.zsh-autocomplete
+          pkgs.zsh-autosuggestions
+          pkgs.zsh-syntax-highlighting
+          pkgs.zsh-completions
+    
+          
           # pkgs.alttab
           # pkgs.arc-browser
           # pkgs.lens
