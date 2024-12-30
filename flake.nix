@@ -45,6 +45,10 @@
           pkgs.kubecolor
           pkgs.alacritty
           pkgs.mkalias
+          # pkgs.alttab
+          # pkgs.arc-browser
+          # pkgs.lens
+          # pkgs.raycast
         ];
 
       # Necessary for using flakes on this system.
