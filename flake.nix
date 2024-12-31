@@ -50,7 +50,8 @@
           pkgs.zsh-autosuggestions
           pkgs.zsh-syntax-highlighting
           pkgs.zsh-completions        
-        ];
+          pkgs.lazygit
+       ];
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
