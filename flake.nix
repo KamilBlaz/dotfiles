@@ -49,13 +49,7 @@
           pkgs.zsh-autocomplete
           pkgs.zsh-autosuggestions
           pkgs.zsh-syntax-highlighting
-          pkgs.zsh-completions
-    
-          
-          # pkgs.alttab
-          # pkgs.arc-browser
-          # pkgs.lens
-          # pkgs.raycast
+          pkgs.zsh-completions        
         ];
 
       # Necessary for using flakes on this system.
