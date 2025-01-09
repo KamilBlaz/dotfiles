@@ -51,6 +51,7 @@
           pkgs.zsh-syntax-highlighting
           pkgs.zsh-completions        
           pkgs.lazygit
+          pkgs.sops
        ];
 
       # Necessary for using flakes on this system.
