@@ -52,6 +52,7 @@
           pkgs.zsh-completions        
           pkgs.lazygit
           pkgs.sops
+          pkgs.age
        ];
 
       # Necessary for using flakes on this system.
