@@ -63,4 +63,5 @@
 [pull]
 	rebase = true
 [protocol "file"]
-	allow = always
+  allow = always
+
