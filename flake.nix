@@ -46,10 +46,6 @@
           pkgs.alacritty
           pkgs.mkalias
           ## auto completion 
-          pkgs.zsh-autocomplete
-          pkgs.zsh-autosuggestions
-          pkgs.zsh-syntax-highlighting
-          pkgs.zsh-completions        
           pkgs.lazygit
           pkgs.sops
           pkgs.age

@@ -1,6 +1,5 @@
 [user]
 	name = Kamil Blaz
-	email = blusik999@outlook.com
 
 [interactive]
     diffFilter = delta --color-only
