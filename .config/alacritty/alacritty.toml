@@ -1,9 +1,6 @@
 
 
-general.live_config_reload = true
-
 [bell]
-animation = "EaseOutExpo"
 duration = 0
 
 [colors]
@@ -46,8 +43,6 @@ background = "0x1E1D2F"
 foreground = "0xD9E0EE"
 
 [cursor]
-blink_interval = 500
-blink_timeout = 5
 unfocused_hollow = false
 
 [cursor.style]
@@ -89,18 +84,19 @@ mouse = "Middle"
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 
+[scrolling]
+history = 50000
+
 [terminal.shell]
 program = "/bin/zsh"
 
 [window]
 decorations = "full"
+dynamic_padding = true
 dynamic_title = true
+option_as_alt = "OnlyRight"
 startup_mode = "Maximized"
 
-[window.dimensions]
-columns = 160
-lines = 80
-
 [window.padding]
-x = 4
-y = 4
+x = 10
+y = 8
